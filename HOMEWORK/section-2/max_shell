@@ -1,0 +1,2 @@
+getent passwd max | cut -d: -f7
+/usr/bin/bash
