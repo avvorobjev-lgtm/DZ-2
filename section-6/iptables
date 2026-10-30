@@ -1,0 +1,5 @@
+Установка:
+sudo apt install iptables -y
+
+Проверка цепочки OUTPUT:
+sudo iptables -L OUTPUT -v -n
