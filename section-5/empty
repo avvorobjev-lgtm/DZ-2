@@ -1,0 +1,5 @@
+Команда для поиска файла:
+grep -rl "You got me!" ~/empty/
+
+Или с помощью find:
+find ~/empty/ -type f -exec grep -l "You got me!" {} \;
