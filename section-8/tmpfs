@@ -1,0 +1,3 @@
+sudo mount -t tmpfs -o size=100M tmpfs /mnt/tmp-data
+Filesystem      Size  Used Avail Use% Mounted on
+tmpfs           100M     0  100M   0% /mnt/tmp-data
