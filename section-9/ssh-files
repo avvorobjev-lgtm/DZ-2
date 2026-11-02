@@ -1,0 +1,8 @@
+Вариант 1 (по имени процесса):
+lsof -c sshd | grep REG
+
+Вариант 2 (по PID, полученному из systemctl):
+lsof -p $(systemctl show -p MainPID --value ssh) | grep REG
+
+Вариант 3 (с указанием типа файла):
+lsof -c sshd -a -d txt,mem | grep REG
