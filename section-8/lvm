@@ -1,0 +1,18 @@
+# 1. Создание Physical Volume на /dev/vdb
+sudo pvcreate /dev/vdb
+
+# 2. Создание Volume Group volume1
+sudo vgcreate volume1 /dev/vdb
+
+# 3. Создание Logical Volume storage (100% места)
+sudo lvcreate -l 100%FREE -n storage volume1
+
+# 4. Создание файловой системы XFS
+sudo mkfs.xfs /dev/volume1/storage
+
+# 5. Создание точки монтирования и монтирование
+sudo mkdir -p /storage
+sudo mount /dev/volume1/storage /storage
+
+# 6. Добавление записи в /etc/fstab для автомонтирования
+echo "/dev/volume1/storage  /storage  xfs  defaults  0  2" | sudo tee -a /etc/fstab

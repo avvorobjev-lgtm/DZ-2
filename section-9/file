@@ -1,0 +1,5 @@
+Вариант 1 (через systemctl):
+systemctl show -p FragmentPath --value ssh
+
+Вариант 2 (через find):
+find /etc/systemd /lib/systemd /usr/lib/systemd -name "ssh.service" 2>/dev/null

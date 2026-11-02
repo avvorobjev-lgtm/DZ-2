@@ -1,0 +1,8 @@
+Вариант 1 (через systemctl):
+systemctl show -p MainPID --value ssh
+
+Вариант 2 (через pgrep):
+pgrep -f "sshd: /usr/sbin/sshd"
+
+Вариант 3 (через ps):
+ps aux | grep "[s]shd" | awk '{print $2}'
